@@ -182,3 +182,59 @@ int main(){
         cout<<arr[i]<<" ";
     }
 }
+
+//////////////12-03-2026/////////////
+//////////PROBLEM1//////////////
+//WRITE A FUNCTION TO PRINT ALL UNIQUE VALUES IN ARRAY
+#include <iostream>
+using namespace std;
+void unique(int arr[],int size){
+    int unique = 0;
+    for(int i = 0;i<size;i++){
+        int temp = 0;
+        for(int j = 0;j<size;j++){
+            if(i==j){
+                continue;
+            }else if(arr[i]==arr[j]){
+            temp = 1;
+            break;
+            }
+        }
+        if(temp == 0){
+                unique = arr[i];
+                cout<<unique<<"  ";
+            }
+    }
+}
+
+int main(){
+    int arr[] = {1,2,3,4,5,2,3,7,4};
+    int size  = sizeof(arr)/sizeof(int);
+    unique(arr,size);
+    return 0;
+}
+
+
+/////////PROBLEM 2///////////
+//WRITE A FUNCTION TO PRINT THE INTERSECTION OF TWO ARRAYS
+#include <iostream>
+using namespace std;
+void intersection(int arr1[],int arr2[],int size1,int size2){
+    int intersect = 0;
+    for(int i = 0;i<size1;i++){
+        for(int j = 0;j<size2;j++){
+            if(arr1[i]==arr2[j]){
+                cout<<arr1[i]<<" ";
+            }
+        }
+    }
+}
+
+int main(){
+    int arr1[] = {1,2,3,4,5,6};
+    int arr2[] = {4,5,7,8};
+    int size1 = sizeof(arr1)/sizeof(int);
+    int size2 = sizeof(arr2)/sizeof(int);
+    intersection(arr1,arr2,size1,size2);
+}
+
