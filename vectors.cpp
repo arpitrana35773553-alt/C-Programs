@@ -1,5 +1,5 @@
-///////12-03-2026/////////
-//VECTORS SYNTAX USING FOR EACH LOOP
+/////12-03-2026/////////
+VECTORS SYNTAX USING FOR EACH LOOP
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -77,7 +77,71 @@ int main(){
 }
 
 
+/////////14-03-2026/////////
+////////problem 1//////////
+//PERFORM A LINEAR SEARCH OPERATION FOR A VECTOR
+#include <iostream>
+#include <vector>
+using namespace std;
+int main(){
+    int n;
+    printf("Insert the number you want ot check: ");
+    scanf("%d",&n);
+    int num = 0;
+    vector <int> vec = {1,2,3,4,5,6,7,8};
+    for(int val: vec){
+        if(val==n){
+            num==1;
+        }     
+    }
+    if(num==1){
+        printf("Yes, It is present in the vector.");
+        }else{
+            printf("The value is not present in the vector.");
+        }
+    }
 
 
+/////////PROBLEM 2//////////
+//WRITE A CODE USING FUNCTIONS TO REVERSE A VECTOR 
+#include <iostream>
+#include <vector>
+using namespace std;
+void reverse(vector<int> &vec){
+    int start = 0;
+    int end = vec.size()-1;
+    while(start<end){
+        int temp = vec[start];
+        vec[start] = vec[end];
+        vec[end] = temp;
+        start++;
+        end--;
+     }
+}
+
+int main(){
+    vector<int> vec = {1,2,3,4,5,6,7};
+    reverse(vec);
+    for(int val: vec){
+        cout<<val<<" ";
+    }
+}
+
+///////////PROBLEM 3//////////
+//FIND OUT THE SINGLE NUMBER IN A VECTOR WITHOUT USING NESTED LOOP
+#include <iostream>
+#include <vector>
+using namespace std;
+int check(vector<int> &vec){
+    int num = 0;
+    for(int val: vec){
+        num ^= val;
+    }
+    return num;
+}
+int main(){
+    vector <int> vec = {1,2,3,4,5,2,3,1,5};
+    cout<<"This is the single number: "<<check(vec);
+}
 
 
