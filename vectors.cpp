@@ -1,5 +1,5 @@
 /////12-03-2026/////////
-VECTORS SYNTAX USING FOR EACH LOOP
+//VECTORS SYNTAX USING FOR EACH LOOP
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -144,4 +144,114 @@ int main(){
     cout<<"This is the single number: "<<check(vec);
 }
 
+///////////////15-03-2026////////////
+//////////PROBLEM 1//////////////
+////FIND THE SUM OF EVEN DIGITS OF EVEN NUMBER OF A VECTOR
+#include <iostream>
+#include <vector>
+using namespace std;
+vector<int> even(vector<int> vec){
+    vector <int> vec2;
+    int idx = 0;
+    for(int val: vec){
+        if(val%2==0){
+            vec2.push_back(val);
+        }
+    }
+    return vec2;
+}
 
+int evenDigit(vector<int> vec2){
+    int sum = 0;
+    for(int val: vec2){
+        while(val>0){
+            int digit  = val%10;
+            if(digit%2==0){
+                sum+=digit;
+            }
+            val = val/10;
+        }
+    }
+    return sum;
+}
+
+int main(){
+    vector<int> vec;
+    int n, val;
+    cout<<"How many values: ";
+    cin >> n;
+    cout<<"Insert the values int the vector: "<<endl;
+    for(int i = 0;i<n;i++){
+        cin >> val;
+        vec.push_back(val);
+    }
+    cout<<evenDigit(even(vec));
+}
+
+
+//////////PROBLEM 2/////////////
+//FIND THE LARGEST VALUE IN THE VECTOR
+#include <iostream>
+#include <vector>
+using namespace std;
+int Largest(vector<int> vec){
+    int largest = vec[0];
+    for(int i = 1;i<vec.size();i++){
+        if(vec[i]>largest){
+            largest = vec[i];
+        }
+    }
+    return largest;
+}
+
+
+
+int main(){
+    vector<int> vec;
+    int n, val;
+    cout<<"Enter the number of values: ";
+    cin>>n;
+    cout<<"Enter the values:"<<endl;
+    for(int i = 0;i<n;i++){
+        cin>>val;
+        vec.push_back(val);
+    }
+    cout<<"Largest value in vector is: "<<Largest(vec);
+}
+
+//////////PROBLEM 3//////////////
+//FIND THE SECOND LARGEST ELEMENT IN THE VECTOR
+#include <iostream>
+#include <vector>
+using namespace std;
+int descending(vector<int> vec){
+    int min;
+    for(int i = 0;i<vec.size();i++){
+    for(int i = 1;i<vec.size();i++){
+        if(vec[i]>vec[i-1]){
+            min = vec[i];
+            vec[i]=vec[i-1];
+            vec[i-1] = min;
+        }
+    }
+}
+   for(int i = 0;i<vec.size();i++){
+    if(vec[i]!=vec[0]){
+        return vec[i];
+    }
+   }
+   return vec[0];
+}
+
+int main(){
+    vector<int> vec;
+    int n, val;
+    cout<<"Enter the number of values: ";
+    cin>>n;
+    cout<<"Enter the values:"<<endl;
+    for(int i = 0;i<n;i++){
+        cin>>val;
+        vec.push_back(val);
+    }
+    cout<<"2nd largest number is: "<<descending(vec);
+}
