@@ -306,3 +306,39 @@ int main(){
     return 0;
 }
 
+
+////////////////////21-03-2026/////////////
+///////////////PROBLEM 1////////////
+////RETURN PAIR IN SORTED ARRAY WITH TARGET SUM
+#include <iostream>
+#include <vector>
+using namespace std;
+vector <int> PairSum(int arr[],int target,int n){
+    vector <int> Ans;
+    int i =0,j=n-1;
+    while(i<j){
+        if(arr[i]+arr[j]>target){
+            j--;
+        }else if(arr[i]+arr[j]<target){
+            i++;
+        }else{
+            Ans.push_back(arr[i]);
+            Ans.push_back(arr[j]);
+            return Ans;
+        }
+    } 
+    return Ans;
+}
+
+int main(){
+    int arr[] = {1,2,3,4,5,6,7,8,9};
+    int n = sizeof(arr)/sizeof(int);
+    int target;
+    cout << "Enter the target Value: ";
+    cin >> target;
+    vector <int> ans = PairSum(arr,target,n);
+    cout<<"The PairSum is: ";
+    for(int i =0;i<ans.size();i++){
+        cout<<ans[i]<<" ";
+    }
+}
