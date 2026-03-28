@@ -56,3 +56,26 @@ public:
       return maxprofit;
     }
 };
+
+/////////////////28-03-2026///////////////
+////Implement pow(x, n), which calculates x raised to the power n
+////  Platform: LeetCode, Approach: Binary Exponentiation (Exponentiation by Squaring), Time Complexity: O(log n), Space Complexity: O(1)
+class Solution {
+public:
+    double myPow(double x, int n) {
+        long binary = n;
+        if(n < 0){
+            x = 1/x;
+            binary = -binary;
+        }
+        double ans = 1;
+        while(binary > 0){
+            if(binary % 2 == 1){
+                ans *= x;
+            }
+            x *= x;
+            binary /= 2;
+        }
+        return ans;
+    }
+};
