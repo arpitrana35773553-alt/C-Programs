@@ -79,3 +79,28 @@ public:
         return ans;
     }
 };
+
+///////////////29-03-2026/////////
+////// Problem: Container With Most Water
+// Platform: LeetCode
+// Approach: Two Pointer (Greedy), Time Complexity: O(n), Space Complexity: O(1)
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int maxWater = 0;
+        int i = 0;
+        int j = height.size() - 1;
+        while(i < j){
+            int width = j - i;
+            int currentHeight = min(height[i], height[j]);
+            int currentWater = width * currentHeight;
+            maxWater = max(maxWater, currentWater);
+            if(height[i] < height[j]){
+                i++;
+            }else{
+                j--;
+            }
+        }
+        return maxWater;
+    }
+};
