@@ -341,4 +341,216 @@ void Name::display(){
 int main(){
     Name n;
     n.display();
+// }
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+struct students{
+    string name;
+    int marks;
+};
+int main(){
+    students s;
+    cin >> s.name;
+    cin >> s.marks;
+    cout<<s.name;
+    cout<<s.marks;
+}
+
+}
+
+#include <iostream>
+using namespace std;
+union students{
+    char name[20];
+    int marks;
+};
+int main(){
+    students s;
+    cin >> s.name;
+    cin >> s.marks;
+    cout<<s.name;
+    cout<<s.marks;
+}
+
+#include <iostream>
+using namespace std;
+enum days{
+    sunday,
+    monday,
+    tuesday,
+    wednesday
+};
+
+int main(){
+    days d;
+    d = sunday;
+    cout<<d<<endl;
+    d = wednesday;
+    cout<<d;
+}
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+class Student{
+    public:
+    string name;
+    int classroom;
+    string gender;
+    int roll_no;
+    void print(){
+        cout<<name;
+    }
+};
+int main(){
+    Student s1;
+    s1.name = "Iron Man";
+    cout<<"Name: "<<s1.name;
+    s1.print();
+}
+
+#include <iostream>
+using namespace std;
+class Sum{
+    public:
+    int num1;
+    int num2;
+    int sum(){
+        return this->num1 + num2;
+    }
+    void print(){
+        cout << num1 <<" "<< num2;
+    }
+};
+int main(){
+    Sum s1;
+    s1.num1 = 5;
+    s1.num2 = 10;
+    cout<<s1.sum()<<endl;
+    s1.print();
+}
+
+
+#include <iostream>
+using namespace std;
+class Rectangle{
+    public:
+    int length;
+    int breadth;
+    int Area(){
+        return this->length*breadth;
+    }
+    int perimeter(){
+        return 2*(length + breadth);
+    }
+};
+int main(){
+    Rectangle r1;
+    r1.length = 10;
+    r1.breadth = 20;
+    cout<<"Area = "<<r1.Area()<<" cm"<<endl;
+    cout<<"Perimeter = "<<r1.perimeter()<<endl;
+    Rectangle r2;
+    cout<<"Enter length: ";
+    cin >> r2.length;
+    cout<<"Enter Breadth: ";
+    cin >> r2.breadth;
+    cout<<"Area = "<<r2.Area()<<" 'cm"<<endl;
+    cout<<"Perimeter = "<<r2.perimeter();
+}
+
+#include <iostream>
+using namespace std;
+class Bank{
+    public:
+    int balance;
+    int pin;
+    Bank(int balance, int pin){
+        this->balance = balance;
+        this-> pin = pin;
+    }
+    void withdraw(int money , int pin){
+        if(this->pin == pin){
+            balance -= money;
+            cout<<"Transaction Successfull"<<" "<<endl<<"balance = "<<balance;
+        }else{
+            cout<<"Wrong pin";
+        }
+    }
+    void deposit(int money){
+        balance += money;
+    }
+};
+int main(){
+    Bank b1(1000,1234);
+    
+    b1.withdraw(100,123);
+}
+
+#include <iostream>
+using namespace std;
+class Employee{
+    public:
+    string name;
+    int age;
+    string gender;
+    Employee(string name,int age, string gender){
+        this -> name = name;
+        this -> age = age;
+        this -> gender = gender;
+
+    }
+    void isEligible(){
+        if(gender == "male" && age > 21){
+            cout << "true";
+        }else if(gender == "female" && age > 20){
+            cout<< "true";
+        }else{
+            cout<< "false";
+        }
+        cout<< endl;
+    }
+    void print(){
+        cout << "Name = "<< name <<endl<< "Age = " << age <<endl<< "Gender = " << gender<<endl;
+    }
+};
+
+int main(){
+    int n;
+    cout << "Number of members: ";
+    cin >> n;
+    for(int i = 0; i < n; i++){
+        string name, gender;
+        int age;
+
+        cin >> name >> age >> gender;
+
+        Employee e(name, age, gender);
+        e.isEligible();
+        e.print();
+    }
+    int n;
+    int age;
+    string name, gender;
+    cout << "number of members: =";
+    cin >> n;
+    for(int i = 0;i < n;i++){
+        cin >> name;
+        cin >> age;
+        cin >> gender;
+    }
+    string name;
+    cin >> name;
+    int age;
+    cin >> age;
+    string gender;
+    cin >> gender;
+    Employee e1(name,age,gender);
+    e.isEligible();
+    e.print();
+    Employee e1(name,age,gender);
+    e1.isEligible();
+    e1.print();
 }

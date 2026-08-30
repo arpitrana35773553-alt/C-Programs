@@ -650,3 +650,171 @@ int main(){
     scanf("%d",&a);
     check(a);
 }
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    for(int i = n;i > 0;i--){
+        for(int j = 0;j < n - i;j++){
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
+}
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    // int factorial = 1;
+    // for(int i = 1;i <= n;i++){
+    //     factorial *= i;
+    // }
+    // cout << factorial;
+    int a = (--n) * 2 * (n--) + n;
+    cout << a;
+    return 0;
+}
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    int sum = 0;
+    for(int i = 1;i <= n;i++){
+        sum += pow(i,3);
+    }
+    cout << sum;
+}
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    int sum = 0;
+    for(int i = 1;i <= n;i++){
+       if(i % 2 == 0){
+        sum -= i;
+       }else{
+        sum += i;
+       }
+    }
+    cout << sum;
+}
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    int sum = 0;
+    for(int i = 0;i <= n;i++){
+        j
+    }
+}
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout << "Enter the number: ";
+    cin >> n;
+    int arr[5] = {4,4,6,2,3};
+    int size =  sizeof(arr)/sizeof(int);
+    int sum = 0;
+    for(int i = 0;i < size;i++){
+        sum += arr[i];
+    }
+    int count = 0;
+    int m = size;
+    while(sum % n != 0){
+        if(arr[m] > 0){
+            arr[m] -= 1; 
+        }else{
+            m = m - 1;
+        }
+    }
+}
+
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n = 81;
+    int end = n;
+    int start = 0;
+    while(start < end){
+        int mid = (start + end)/2;
+        if(mid*mid == n){
+            cout << mid;
+            break;
+        }else if(mid*mid > n){
+            end = mid - 1;
+        }else{
+            start = mid + 1;
+        }
+    }
+}
+
+#include <iostream>
+using namespace std;
+int main(){
+   int n;
+   cin >> n;
+   int arr[n];
+   for(int i = 0;i < n;i++){
+      cin >> arr[i];
+   }
+   int target = 20;
+   int start = 0;
+   int end = sizeof(arr)/sizeof(int) - 1;
+   while(start <= end){
+      int mid = (start + end) / 2;
+      if(arr[mid] == target){
+         cout << mid;
+         break;
+      }else if(arr[mid] > target){
+         end = mid - 1;
+      }else{
+         start = mid + 1;
+      }
+   }
+   return 0;
+}
+
+//Find the next smallest number greater than the target
+#include <iostream>
+using namespace std;
+int main(){
+   int n;
+   cin >> n;
+   int arr[n];
+   for(int i = 0;i < n;i++){
+      cin >> arr[i];
+   }
+   int target = 6;
+   int start = 0;
+   int end = sizeof(arr)/sizeof(arr[0]) - 1;
+   int ans;
+   while(start <= end){
+      int mid = start + (end - start) / 2;
+      if(arr[mid] > target){
+         ans = mid;
+         end = mid - 1;
+      }else{
+         start = mid + 1;
+      }
+   }
+   cout << arr[ans];
+   return 0;
+}
+
+
+
